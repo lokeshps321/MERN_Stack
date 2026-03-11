@@ -1,0 +1,30 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Node
+node_modules/
+
+# Env files (keep examples)
+.env
+.env.*
+!.env.example
+
+# Builds
+client/dist/
+server/dist/
+
+# Local DB + uploads
+server/db_data/
+server/uploads/
+
+# Misc
+coverage/
