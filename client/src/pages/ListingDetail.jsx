@@ -121,7 +121,7 @@ export default function ListingDetail() {
         <div className="space-y-4">
           <div className="card-glass overflow-hidden rounded-3xl">
             {images.length > 0 ? (
-              <img src={getImageUrl(images[selectedImg])} alt={listing.title} className="h-80 w-full object-cover transition-all duration-300" />
+              <img src={getImageUrl(images[selectedImg])} alt={listing.title} className="h-80 w-full object-cover object-top transition-all duration-300" />
             ) : (
               <div className="flex h-80 items-center justify-center bg-ink/5 text-sm text-ink/40">
                 <Heart size={40} className="text-ink/10" />
