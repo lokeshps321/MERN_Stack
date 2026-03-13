@@ -10,17 +10,11 @@ import { createListing, deleteListing, getListing, listListings, updateListing }
 
 const router = Router();
 
-const storage = multer.diskStorage({
-  destination: "uploads/",
-  filename: (req, file, cb) => {
-    const ext = path.extname(file.originalname);
-    cb(null, `${nanoid()}${ext}`);
-  }
-});
+import { storage } from "../config/cloudinary.js";
 
 const upload = multer({
   storage,
-  limits: { fileSize: 2 * 1024 * 1024 },
+  limits: { fileSize: 5 * 1024 * 1024 }, // Increased to 5MB for cloud uploads
   fileFilter: (req, file, cb) => {
     const allowed = /jpeg|jpg|png|webp|avif/;
     const ext = allowed.test(path.extname(file.originalname).toLowerCase());

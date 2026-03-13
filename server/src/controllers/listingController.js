@@ -100,7 +100,7 @@ export async function createListing(req, res, next) {
   try {
     let images = [];
     if (req.files?.length) {
-      images = req.files.map((file) => `/uploads/${file.filename}`);
+      images = req.files.map((file) => file.path);
     } else {
       images = parseImages(req.body.images);
     }
@@ -163,7 +163,7 @@ export async function updateListing(req, res, next) {
     
     // Add newly uploaded images
     if (req.files?.length) {
-      const newImages = req.files.map((file) => `/uploads/${file.filename}`);
+      const newImages = req.files.map((file) => file.path);
       images = [...images, ...newImages];
     }
     

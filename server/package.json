@@ -6,12 +6,14 @@
   "scripts": {
     "dev": "node src/index.js",
     "start": "node src/index.js",
-    "latency:test": "node scripts/mongodb-latency-test.js"
+    "latency:test": "node scripts/mongodb-latency-test.js",
+    "migrate:cloudinary": "node scripts/migrate-to-cloudinary.js"
   },
   "dependencies": {
     "@clerk/clerk-sdk-node": "^4.13.23",
     "@clerk/express": "^2.0.2",
     "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.41.3",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
@@ -20,6 +22,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.4.0",
     "multer": "^1.4.5-lts.1",
+    "multer-storage-cloudinary": "^4.0.0",
     "nanoid": "^5.0.7",
     "node-fetch": "^3.3.2",
     "resend": "^6.9.3",
